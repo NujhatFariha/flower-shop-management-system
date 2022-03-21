@@ -55,21 +55,22 @@ app.post("/register", (req, res) => {
 
 
 
-// app.post("/create", (req, res) => {
+app.post("/create", (req, res) => {
 
-//     const name = req.body.name;
-//     const image = req.body.image;
-//     const description = req.body.description;
-//     const Price = req.body.Price;
+    const name = req.body.name;
+    const image = req.body.image;
+    const description = req.body.description;
+    const price = req.body.price;
 
-//     db.query(
-//       "INSERT INTO flowers (name, image, description, Price) VALUES (?,?,?,?)",
-//       [name, image, description, Price],
-//       (err, result) => {
-//         console.log(err);
-//       }
-//     );
+    db.query(
+      "INSERT INTO flowers (name, image, description, price) VALUES (?,?,?,?)",
+      [name, image, description, price],
+      (err, result) => {
+        console.log(err);
+      }
+    )});
 
     app.listen(port, () => {
   console.log("Server is Running at", port);
 });
+
